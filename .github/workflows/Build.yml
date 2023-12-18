@@ -19,8 +19,6 @@ jobs:
         registry: ghcr.io
         username: ${{ secrets.GHCR_USERNAME }}
         password: ${{ secrets.GHCR_TOKEN }}
-
-    - name: build and push
     - run: docker build -t ghcr.io/meerugin/hhh/main:1.0 ./python
     - run: docker push ghcr.io/meerugin/hhh/main:1.0
     - run: docker build -t ghcr.io/meerugin/hhh/index:1.0 ./node
