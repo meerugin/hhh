@@ -1,0 +1,18 @@
+version: '3'
+services:
+  node:
+    build:
+      context: ./node
+      dockerfile: Dockerfile
+    ports:
+      - 3000:3000
+    volumes:
+      - ./node:/app
+  python:
+    build:
+      context: ./python
+      dockerfile: Dockerfile
+    ports:
+      - 8000:8000
+    volumes:
+      - ./python:/app
