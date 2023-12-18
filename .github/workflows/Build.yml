@@ -20,11 +20,8 @@ jobs:
         username: ${{ secrets.GHCR_USERNAME }}
         password: ${{ secrets.GHCR_TOKEN }}
 
-    - name: Build 
-      run: docker buildx
-
-    - name: Push1
-      run: docker push ghcr.io/meerugin/hhh/main:1.0
-
-    - name: Push2
-      run: docker push ghcr.io/meerugin/hhh/index:1.0
+    - name: Build and push images
+      uses: docker/build-push-action@v2
+      with:
+       context: .
+       push: true
