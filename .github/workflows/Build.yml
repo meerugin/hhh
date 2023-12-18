@@ -21,8 +21,7 @@ jobs:
         password: ${{ secrets.GHCR_TOKEN }}
 
     - name: build and push
-      run: 
-       docker build -t ghcr.io/meerugin/hhh/main:1.0 ./python
-       docker push ghcr.io/meerugin/hhh/main:1.0
-       docker build -t ghcr.io/meerugin/hhh/index:1.0 ./node
-       docker push ghcr.io/meerugin/hhh/index:1.0
+    - run: docker build -t ghcr.io/meerugin/hhh/main:1.0 ./python
+    - run: docker push ghcr.io/meerugin/hhh/main:1.0
+    - run: docker build -t ghcr.io/meerugin/hhh/index:1.0 ./node
+    - run: docker push ghcr.io/meerugin/hhh/index:1.0
