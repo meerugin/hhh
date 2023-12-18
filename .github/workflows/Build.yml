@@ -13,6 +13,9 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
+    - name: Build
+      run: docker build -t ghcr.io/meerugin/hhh:1.0 .
+
     - name: Login to ghcr.io
       uses: docker/login-action@v1
       with:
@@ -20,8 +23,5 @@ jobs:
         username: ${{ secrets.GHCR_USERNAME }}
         password: ${{ secrets.GHCR_TOKEN }}
 
-    - name: Build and push images
-      uses: docker/build-push-action@v2
-      with:
-        context: .
-        push: true
+    - name: Push
+      run: docker push ghcr.io/meerugin/hhh:1.0
