@@ -22,8 +22,8 @@ jobs:
 
     - name: build
       run: 
-       docker build -t ghcr.io/meerugin/hhh/main:1.0 .
-       docker build -t ghcr.io/meerugin/hhh/index:1.0 .
+       docker build -t ghcr.io/meerugin/hhh/main:1.0 meerugin/hhh/python
+       docker build -t ghcr.io/meerugin/hhh/index:1.0 meerugin/hhh/node
 
     - name: Push
       run:
